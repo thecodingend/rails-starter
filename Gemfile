@@ -62,3 +62,7 @@ end
 gem "inertia_rails", "~> 3.21"
 
 gem "vite_rails", "~> 3.10"
+
+gem "pdf-reader", "~> 2.14"
+
+gem "ruby_llm", "~> 1.15"

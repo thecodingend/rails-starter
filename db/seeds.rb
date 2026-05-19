@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+[
+  { name: "widget", quantity: 42 },
+  { name: "gadget", quantity: 17 },
+  { name: "sprocket", quantity: 9 }
+].each do |attributes|
+  item = InventoryItem.find_or_initialize_by(name: attributes[:name])
+  item.quantity = attributes[:quantity]
+  item.save!
+end

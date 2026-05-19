@@ -16,7 +16,9 @@ git remote -v
 
 ```sh
 docker compose up -d
-bin/rails db:create
+bin/rails db:create 
+# or if db already exists 
+# bin/rails db:prepare
 bin/dev
 ```
 
