@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "skills": {
+    "impeccable": {
+      "source": "pbakaus/impeccable",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/impeccable/SKILL.md",
+      "computedHash": "e07098370ad7fd4605b67d305d8c06623a5c7d7737d2364e30932294ef880ff6"
+    },
+    "inertia-rails-architecture": {
+      "source": "inertia-rails/skills",
+      "sourceType": "github",
+      "skillPath": "skills/inertia-rails-architecture/SKILL.md",
+      "computedHash": "0df28a8608906ab197357e7b2668e649f9956b3d549594f00c8979c589b88f01"
+    },
+    "inertia-rails-controllers": {
+      "source": "inertia-rails/skills",
+      "sourceType": "github",
+      "skillPath": "skills/inertia-rails-controllers/SKILL.md",
+      "computedHash": "612dfa44798d0b8554c08bae1e26c8d5c995f040239e41689c71e4ea19e106af"
+    },
+    "inertia-rails-forms": {
+      "source": "inertia-rails/skills",
+      "sourceType": "github",
+      "skillPath": "skills/inertia-rails-forms/SKILL.md",
+      "computedHash": "47e38c3efe7e602d45b4a7edc7d36c35a98b5ce6146e5318dc0a2ea6182b2a60"
+    },
+    "inertia-rails-pages": {
+      "source": "inertia-rails/skills",
+      "sourceType": "github",
+      "skillPath": "skills/inertia-rails-pages/SKILL.md",
+      "computedHash": "c5fa65f568407746a34f13a07d826549b6bfad6d610255b7852ceed172ba443c"
+    },
+    "inertia-rails-setup": {
+      "source": "inertia-rails/skills",
+      "sourceType": "github",
+      "skillPath": "skills/inertia-rails-setup/SKILL.md",
+      "computedHash": "7e5039078abda4f3e0b156bba5dfdb6b70cc2598adbed5eab286497a17c041b9"
+    },
+    "inertia-rails-testing": {
+      "source": "inertia-rails/skills",
+      "sourceType": "github",
+      "skillPath": "skills/inertia-rails-testing/SKILL.md",
+      "computedHash": "fb821201cf90578180eaf9004e914ce39412c3b5f3cefdbb155c227708327ece"
+    },
+    "inertia-rails-typescript": {
+      "source": "inertia-rails/skills",
+      "sourceType": "github",
+      "skillPath": "skills/inertia-rails-typescript/SKILL.md",
+      "computedHash": "49f9c1eea1decbe8196ae9f5dfaecf7fff384c5bd5d828dd498b0b5e3bdede34"
+    },
+    "shadcn-inertia": {
+      "source": "inertia-rails/skills",
+      "sourceType": "github",
+      "skillPath": "skills/shadcn-inertia/SKILL.md",
+      "computedHash": "2d65fa701ea12573aea5f45d77f513691d790958073e45cec55b0df20a261666"
+    }
+  }
+}

@@ -42,16 +42,12 @@ bin/rails db:prepare
 bin/dev
 ```
 
-## Required Skills
+## Skills
 
-Install the project skills:
+Project skills ship with the repository (in `.agents/skills` and
+`.claude/skills`), so there is nothing to install:
 
-```sh
-npx skills add inertia-rails/skills
-npx skills add pbakaus/impeccable
-```
-
-References:
-
-- [inertia-rails/skills](https://github.com/inertia-rails/skills)
-- [impeccable](https://impeccable.style/)
+- [inertia-rails/skills](https://github.com/inertia-rails/skills) — Inertia
+  Rails patterns for controllers, forms, pages, testing, TypeScript, and
+  shadcn/ui
+- [impeccable](https://impeccable.style/) — frontend design and UI quality

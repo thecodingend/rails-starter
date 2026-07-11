@@ -43,4 +43,6 @@ node_modules
 
 .DS_Store
 
+# Ignore local Claude settings, but keep the committed skills.
 .claude/*
+!.claude/skills/
