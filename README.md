@@ -45,7 +45,7 @@ bin/dev
 ## Skills
 
 Project skills ship with the repository (in `.agents/skills` and
-`.claude/skills`), so there is nothing to install:
+`.claude/skills`):
 
 - [inertia-rails/skills](https://github.com/inertia-rails/skills) — Inertia
   Rails patterns for controllers, forms, pages, testing, TypeScript, and
