@@ -82,7 +82,9 @@ Devise.setup do |config|
   # config.http_authenticatable = false
 
   # If 401 status code should be returned for AJAX requests. True by default.
-  # config.http_authenticatable_on_xhr = true
+  # Disabled so unauthenticated Inertia (XHR) requests redirect to sign-in
+  # instead of returning a 401 that Inertia renders in its error overlay.
+  config.http_authenticatable_on_xhr = false
 
   # The realm used in Http Basic Authentication. 'Application' by default.
   # config.http_authentication_realm = 'Application'
