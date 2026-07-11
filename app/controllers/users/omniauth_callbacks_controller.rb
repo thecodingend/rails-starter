@@ -10,7 +10,16 @@ module Users
     end
 
     def failure
-      redirect_to new_user_session_path, alert: "Could not sign in with Google."
+      error = request.env["omniauth.error"]
+      type = request.env["omniauth.error.type"]
+      strategy = request.env["omniauth.error.strategy"]&.name || "unknown"
+      message = error&.message.presence || "no exception message"
+
+      Rails.logger.warn(
+        "OmniAuth failure for #{strategy} (#{type || "unknown"}): #{error&.class || "no exception"} #{message}"
+      )
+
+      redirect_to new_user_session_path, alert: "Could not sign in."
     end
   end
 end
