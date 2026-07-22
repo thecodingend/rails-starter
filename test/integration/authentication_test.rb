@@ -29,7 +29,7 @@ class AuthenticationTest < ActionDispatch::IntegrationTest
   test "shares current user with inertia pages" do
     sign_in users(:regular)
 
-    get root_path
+    get "/inertia-example"
 
     assert_inertia_response
     assert_inertia_props auth: {
