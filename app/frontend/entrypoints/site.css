@@ -1,0 +1,150 @@
+/* Stylesheet for the server-rendered marketing site and blog (Sitepress pages).
+   The Inertia app uses application.css; this file deliberately shares the same
+   typeface but carries its own two-ink print palette: black + fluorescent pink. */
+
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
+@import "tailwindcss" source(none);
+
+@source "../../views/layouts";
+@source "../../content";
+
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Contrast-verified pairs (WCAG): ink/paper 19.1, ink-muted/paper 7.8,
+     ink/riso 5.1, riso-deep/paper 6.8, riso/ink 5.1, paper/riso 3.8 (display only). */
+  --color-paper: oklch(1 0 0);
+  --color-ink: oklch(0.17 0 0);
+  --color-ink-muted: oklch(0.44 0 0);
+  --color-riso: oklch(0.64 0.22 348);
+  --color-riso-deep: oklch(0.5 0.21 348);
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    font-kerning: normal;
+    font-optical-sizing: auto;
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+  }
+
+  ::selection {
+    background: var(--color-riso);
+    color: var(--color-paper);
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+
+  code, pre {
+    font-variant-ligatures: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-riso-deep);
+    outline-offset: 3px;
+  }
+
+  .bg-ink :focus-visible {
+    outline-color: var(--color-riso);
+  }
+
+  .bg-riso :focus-visible {
+    outline-color: var(--color-ink);
+  }
+}
+
+@layer components {
+  /* Display ramp: 42px -> 92px, ratio 2.2, tracking above the -0.04em floor. */
+  .text-display {
+    font-size: clamp(2.625rem, 5.2vw + 1.35rem, 5.75rem);
+    line-height: 1.04;
+    letter-spacing: -0.025em;
+    font-weight: 780;
+  }
+
+  .text-section {
+    font-size: clamp(1.875rem, 2.2vw + 1.2rem, 2.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 740;
+  }
+
+  /* The quoted house rules on the pink sheet. Always "large text" for WCAG. */
+  .text-rule {
+    font-size: clamp(1.5rem, 1.9vw + 1rem, 2.5rem);
+    line-height: 1.18;
+    letter-spacing: -0.015em;
+    font-weight: 700;
+  }
+
+  .rise {
+    animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .rise-2 { animation-delay: 0.09s; }
+  .rise-3 { animation-delay: 0.18s; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(0.75rem); }
+    to { opacity: 1; transform: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rise, .rise-2, .rise-3 { animation: none; }
+  }
+
+}
+
+/* Blog articles: same inks, comfortable measure. Unlayered on purpose —
+   these must win over the typography plugin's utility-layer defaults. */
+.prose {
+  --tw-prose-body: var(--color-ink);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-lead: var(--color-ink-muted);
+  --tw-prose-links: var(--color-riso-deep);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-counters: var(--color-riso-deep);
+  --tw-prose-bullets: var(--color-riso);
+  --tw-prose-hr: color-mix(in oklch, var(--color-ink) 15%, transparent);
+  --tw-prose-quotes: var(--color-ink);
+  --tw-prose-code: var(--color-ink);
+  --tw-prose-pre-bg: var(--color-ink);
+  --tw-prose-pre-code: var(--color-paper);
+  --tw-prose-th-borders: color-mix(in oklch, var(--color-ink) 25%, transparent);
+  --tw-prose-td-borders: color-mix(in oklch, var(--color-ink) 15%, transparent);
+  max-width: 65ch;
+}
+
+/* Code prints as a solid ink plate, square like everything else. */
+.prose pre {
+  border-radius: 0;
+}
+
+/* Quoted house rules keep the manifesto voice: upright and bold, no side-stripe. */
+.prose blockquote {
+  border-left: none;
+  padding-left: 0;
+  font-style: normal;
+  font-weight: 650;
+  font-size: 1.125em;
+  line-height: 1.5;
+}
+
+.prose code {
+  font-weight: 500;
+}
+
+.prose a {
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}

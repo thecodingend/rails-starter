@@ -1,0 +1,37 @@
+---
+title: Blog · rails-starter
+description: Notes on running coding agents inside an opinionated Rails monolith — conventions, skills, and changes to the starter.
+---
+<%= render "layouts/masthead" %>
+
+<main class="mx-auto w-full max-w-3xl px-5 pt-10 pb-24 sm:px-8 lg:pt-16">
+  <header class="flex flex-col gap-4 border-b border-ink/10 pb-10">
+    <h1 class="text-section">Blog</h1>
+    <p class="max-w-[56ch] leading-relaxed text-ink-muted text-pretty">
+      Notes on running coding agents inside an opinionated Rails monolith —
+      conventions, skills, and changes to the starter.
+    </p>
+  </header>
+
+  <% posts = BlogPost.latest %>
+  <% if posts.any? %>
+    <ul class="flex flex-col">
+      <% posts.each do |post| %>
+        <li class="flex flex-col gap-2 border-b border-ink/10 py-8">
+          <time datetime="<%= post.date %>" class="font-mono text-sm text-riso-deep"><%= post.date.strftime("%B %-d, %Y") %></time>
+          <a href="<%= post.request_path %>" class="max-w-[32ch] text-2xl font-bold tracking-tight text-balance underline decoration-transparent decoration-2 underline-offset-4 transition-colors hover:decoration-riso"><%= post.title %></a>
+          <% if post.description %>
+            <p class="max-w-[58ch] leading-relaxed text-ink-muted text-pretty"><%= post.description %></p>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p class="pt-10 font-mono text-sm text-ink-muted">Nothing here yet.</p>
+  <% end %>
+
+  <footer class="mt-16 flex flex-wrap items-baseline justify-between gap-4 pt-6 font-mono text-xs text-ink-muted">
+    <a href="/" class="underline decoration-[1.5px] underline-offset-4 hover:text-riso-deep">&larr; rails-starter</a>
+    <span>served by the Rails app it describes</span>
+  </footer>
+</main>
