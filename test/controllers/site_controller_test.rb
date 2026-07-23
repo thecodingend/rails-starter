@@ -4,7 +4,7 @@ class SiteControllerTest < ActionDispatch::IntegrationTest
   test "landing page renders" do
     get root_path
     assert_response :success
-    assert_select "h1", text: /Your agent has already read this codebase/
+    assert_select "h1", text: /Agent-written code you'd actually merge/
   end
 
   test "blog index links to posts" do

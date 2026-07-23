@@ -24,7 +24,7 @@ The quality of AI-written code is set by the codebase it lands in. This starter 
 
 - Primary CTA: clone the repository / use it as a GitHub template.
 - Secondary CTA: read the blog.
-- The line a visitor remembers after 10 seconds: "your agent has already read this codebase."
+- The line a visitor remembers after 10 seconds: "agent-written code you'd actually merge."
 - Belief ladder: (1) agent output quality depends on the repo, not the model; (2) this repo encodes real, opinionated conventions the agent follows; (3) the stack underneath is boring and proven, so it survives past the demo; (4) it's a clone away.
 - Proof on hand: the repo itself — real CLAUDE.md rules, nine committed skills, real Gemfile versions. No testimonials; the artifacts are the proof, quoted verbatim.
 
@@ -37,12 +37,13 @@ Opinionated, dry, exact. A well-run print shop: heavy black type, one bright spo
 - Gradient-mesh AI-SaaS landing pages: glassmorphism, glowing orbs, "✨ AI-powered" badges and pill chips, fake logo walls, hero metrics.
 - Terminal-cosplay dev-tool dark mode (green-on-black, fake shell prompts as decoration).
 - Editorial-magazine affectation: italic display serifs, drop caps, eyebrow labels above every section.
-- Anything a visitor could identify as AI-generated at a glance.
+- Anything a visitor could identify as AI-generated at a glance, including em dashes in copy.
+- Self-referential meta copy ("this page was served by...", "set in Geist", "printed in two inks"). The craft shows; it does not narrate itself.
 
 ## Design Principles
 
 - The repo is the imagery. Real files, real rules, real versions — quoted verbatim, typeset like they matter. Never invent proof.
-- Practice what you preach: the page is served by the Rails app it describes, styled by the app's own Tailwind theme and typeface.
+- Practice what you preach: the page is served by the Rails app it describes and set in the app's own typeface, without saying so in the copy.
 - One spot color, committed. Ink, paper, and pink doing all the brand work, like a two-ink riso print.
 - Say less, mean it. Every sentence is a claim someone could check by opening the repo.
 

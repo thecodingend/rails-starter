@@ -61,12 +61,16 @@
   .bg-riso :focus-visible {
     outline-color: var(--color-ink);
   }
+
+  .bg-riso-deep :focus-visible {
+    outline-color: var(--color-paper);
+  }
 }
 
 @layer components {
-  /* Display ramp: 42px -> 92px, ratio 2.2, tracking above the -0.04em floor. */
+  /* Display ramp: 42px -> 80px, ratio 1.9, tracking above the -0.04em floor. */
   .text-display {
-    font-size: clamp(2.625rem, 5.2vw + 1.35rem, 5.75rem);
+    font-size: clamp(2.625rem, 4.6vw + 1.3rem, 5rem);
     line-height: 1.04;
     letter-spacing: -0.025em;
     font-weight: 780;
@@ -105,7 +109,7 @@
 
 }
 
-/* Blog articles: same inks, comfortable measure. Unlayered on purpose —
+/* Blog articles: same inks, comfortable measure. Unlayered on purpose:
    these must win over the typography plugin's utility-layer defaults. */
 .prose {
   --tw-prose-body: var(--color-ink);
