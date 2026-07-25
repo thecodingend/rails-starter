@@ -46,18 +46,12 @@ bin/dev
 
 ## Marketing Site & Blog
 
-The landing page and blog are static content served by
-[Sitepress](https://sitepress.cc) from `app/content/pages`, rendered
-server-side with the rest of the app — same repo, same deploy, no separate
-static-site pipeline. The Inertia example app stays available at
-`/inertia-example`.
-
-- `app/content/pages/index.html.erb` — the landing page (`/`)
-- `app/content/pages/blog.html.erb` — the blog index (`/blog`)
-- `app/content/pages/blog/*.html.md` — posts, one markdown file each
-- `app/views/layouts/site.html.erb` / `article.html.erb` — page chrome
-- `app/frontend/entrypoints/site.css` — the marketing stylesheet (Tailwind,
-  separate from the app's `application.css`)
+The landing page (`/`) and blog (`/blog`) are
+[Sitepress](https://sitepress.cc) pages in `app/content/pages`,
+server-rendered with the rest of the app — same repo, same deploy. They have
+their own layouts (`app/views/layouts/site.html.erb` and `article.html.erb`)
+and stylesheet (`app/frontend/entrypoints/site.css`), separate from the
+Inertia app, which stays available at `/inertia-example`.
 
 To publish a post, add a markdown file under `app/content/pages/blog/`:
 
@@ -67,13 +61,15 @@ layout: article
 title: Post title
 date: 2026-07-22
 description: One-sentence summary shown on the index and in meta tags.
+image: /og/post-title.png
 ---
 
 Body in markdown. Fenced code blocks work.
 ```
 
-The blog index and the landing page's "from the blog" list pick it up
-automatically (`BlogPost` in `app/content/models/blog_post.rb`).
+The blog index and the landing page pick it up automatically. `image` is
+optional: drop a 1200×630 image in `public/og/` and it becomes the page's
+Open Graph image.
 
 ## Skills
 
