@@ -10,9 +10,8 @@
   ],
   "compilerOptions": {
     /* Required for shadcn-ui/ui */
-    "baseUrl": "./app/frontend",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./app/frontend/*"]
     }
   }
 }
