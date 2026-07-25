@@ -80,3 +80,7 @@ Project skills ship with the repository (in `.agents/skills` and
   Rails patterns for controllers, forms, pages, testing, TypeScript, and
   shadcn/ui
 - [impeccable](https://impeccable.style/) — frontend design and UI quality
+
+## License
+
+Released under the [MIT License](LICENSE).
