@@ -69,3 +69,6 @@ gem "omniauth-rails_csrf_protection", "~> 2.0.1"
 gem "pundit", "~> 2.5.2"
 
 gem "ruby_llm"
+
+gem "sitepress-rails", "~> 4.1"
+gem "markdown-rails", "~> 2.2"

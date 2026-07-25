@@ -1,0 +1,238 @@
+---
+title: rails-starter · agent-written code you'd actually merge
+description: A Rails 8 + Inertia + React starter for AI-assisted development. Conventions, skills, and guardrails committed next to the code they govern. Clone it and point your agent at it.
+---
+<%= render "layouts/masthead" %>
+
+<main>
+  <%# Hero: the claim, then the artifact that proves it %>
+  <section class="mx-auto grid w-full max-w-6xl gap-14 px-5 pt-14 pb-24 sm:px-8 lg:grid-cols-[7fr_5fr] lg:gap-20 lg:pt-24 lg:pb-32">
+    <div class="flex min-w-0 flex-col gap-8">
+      <h1 class="text-display rise"><span class="whitespace-nowrap">Agent-written</span> code you'd actually <span class="text-riso">merge</span>.</h1>
+      <p class="rise rise-2 max-w-[56ch] text-lg leading-relaxed text-ink-muted text-pretty">
+        A Rails 8 starter that briefs your agent before it writes a line. Conventions,
+        skills, and guardrails live next to the code they govern. Auth, background
+        jobs, CI, and deploys come wired. Opinions preinstalled.
+      </p>
+      <div class="rise rise-3 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="https://github.com/thecodingend/rails-starter" class="bg-ink px-6 py-3.5 font-medium text-paper transition-colors hover:bg-riso hover:text-ink">Get the starter</a>
+        <a href="/blog" class="font-medium text-riso-deep underline decoration-[1.5px] underline-offset-4 hover:text-ink">or read the blog</a>
+      </div>
+      <div class="rise rise-3 flex max-w-full items-stretch self-start border border-ink/20 font-mono text-[0.8125rem]">
+        <code class="min-w-0 overflow-x-auto px-4 py-3 whitespace-nowrap">git clone git@github.com:thecodingend/rails-starter.git</code>
+        <button type="button" data-copy="git clone git@github.com:thecodingend/rails-starter.git" class="border-l border-ink/20 px-4 text-ink-muted transition-colors hover:bg-riso hover:text-ink">copy</button>
+      </div>
+    </div>
+
+    <figure class="rise rise-3 min-w-0 lg:mt-4">
+      <div class="border border-ink/15">
+        <figcaption class="border-b border-ink/15 px-4 py-2.5 font-mono text-xs text-ink-muted">what an agent reads before its first diff</figcaption>
+        <pre class="overflow-x-auto px-4 py-4 font-mono text-[0.8125rem] leading-[1.9]">rails-starter/
+├── <span class="font-semibold text-riso-deep">AGENTS.md</span>          <span class="text-ink-muted"># for Codex and others</span>
+├── <span class="font-semibold text-riso-deep">CLAUDE.md</span>          <span class="text-ink-muted"># the briefing</span>
+├── <span class="font-semibold text-riso-deep">.claude/skills/</span>    <span class="text-ink-muted"># nine skills, versioned</span>
+├── app/
+│   ├── controllers/
+│   ├── frontend/      <span class="text-ink-muted"># Inertia pages, React</span>
+│   └── models/
+├── config/
+├── test/
+└── Dockerfile         <span class="text-ink-muted"># Kamal-ready</span></pre>
+      </div>
+    </figure>
+  </section>
+
+  <%# The briefing: verbatim house rules on a full-bleed pink sheet %>
+  <section class="bg-riso-deep text-paper">
+    <div class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-5 py-20 sm:px-8 lg:py-28">
+      <div class="flex flex-col gap-4">
+        <p class="font-mono text-sm">CLAUDE.md, committed at the repo root</p>
+        <h2 class="text-section max-w-[24ch]">Rules that make your agent write better Rails.</h2>
+        <p class="max-w-[58ch] leading-relaxed text-pretty">
+          They load with every task and steer the agent away from generic patterns,
+          toward the tight, idiomatic Rails the rest of the codebase is written in.
+          A few of them, verbatim:
+        </p>
+      </div>
+
+      <ul class="flex flex-col border-y border-paper/30">
+        <li class="border-b border-paper/30 py-7 lg:py-9">
+          <blockquote class="text-rule">“Helpers are near-banned.”</blockquote>
+        </li>
+        <li class="border-b border-paper/30 py-7 lg:py-9">
+          <blockquote class="text-rule max-w-[26ch]">“Accept duplication when it keeps the code obvious. Do not extract for neatness alone.”</blockquote>
+        </li>
+        <li class="py-7 lg:py-9">
+          <blockquote class="text-rule max-w-[30ch]">“Prefer failing loudly over adding protection against programmer errors or impossible states.”</blockquote>
+        </li>
+      </ul>
+
+      <p class="max-w-[58ch] leading-relaxed text-pretty">
+        Different opinions? The rules live in one file. Edit it and every diff after
+        follows yours.
+      </p>
+    </div>
+  </section>
+
+  <%# Skills: the second half of the briefing %>
+  <section class="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 lg:py-28">
+    <div class="grid gap-12 lg:grid-cols-[5fr_7fr] lg:gap-20">
+      <div class="flex flex-col gap-4">
+        <h2 class="text-section">Skills, checked&nbsp;in.</h2>
+        <p class="max-w-[46ch] leading-relaxed text-ink-muted text-pretty">
+          Not prompts pasted into a chat window. Skills are versioned instruction sets
+          the agent loads when the work matches. Reviewed, diffed, and pinned like any
+          other dependency.
+        </p>
+        <p class="font-mono text-sm text-ink-muted">.claude/skills · .agents/skills · skills-lock.json</p>
+      </div>
+      <ul class="self-start border-y border-ink/10">
+        <li class="grid gap-1 border-b border-ink/10 py-4 sm:grid-cols-[15rem_1fr] sm:gap-6">
+          <code class="font-mono text-sm font-medium text-riso-deep">inertia-rails-architecture</code>
+          <span class="text-sm leading-relaxed text-ink-muted">decides where data loads and who owns routing</span>
+        </li>
+        <li class="grid gap-1 border-b border-ink/10 py-4 sm:grid-cols-[15rem_1fr] sm:gap-6">
+          <code class="font-mono text-sm font-medium text-riso-deep">inertia-rails-controllers</code>
+          <span class="text-sm leading-relaxed text-ink-muted">render inertia:, props, redirects, flash</span>
+        </li>
+        <li class="grid gap-1 border-b border-ink/10 py-4 sm:grid-cols-[15rem_1fr] sm:gap-6">
+          <code class="font-mono text-sm font-medium text-riso-deep">inertia-rails-forms</code>
+          <span class="text-sm leading-relaxed text-ink-muted">forms, validation errors, and file uploads</span>
+        </li>
+        <li class="grid gap-1 border-b border-ink/10 py-4 sm:grid-cols-[15rem_1fr] sm:gap-6">
+          <code class="font-mono text-sm font-medium text-riso-deep">inertia-rails-pages</code>
+          <span class="text-sm leading-relaxed text-ink-muted">pages, persistent layouts, navigation</span>
+        </li>
+        <li class="grid gap-1 border-b border-ink/10 py-4 sm:grid-cols-[15rem_1fr] sm:gap-6">
+          <code class="font-mono text-sm font-medium text-riso-deep">inertia-rails-testing</code>
+          <span class="text-sm leading-relaxed text-ink-muted">Minitest assertions for Inertia responses</span>
+        </li>
+        <li class="grid gap-1 border-b border-ink/10 py-4 sm:grid-cols-[15rem_1fr] sm:gap-6">
+          <code class="font-mono text-sm font-medium text-riso-deep">inertia-rails-typescript</code>
+          <span class="text-sm leading-relaxed text-ink-muted">typed page props and shared data</span>
+        </li>
+        <li class="grid gap-1 border-b border-ink/10 py-4 sm:grid-cols-[15rem_1fr] sm:gap-6">
+          <code class="font-mono text-sm font-medium text-riso-deep">inertia-rails-setup</code>
+          <span class="text-sm leading-relaxed text-ink-muted">bootstraps these conventions in a fresh app</span>
+        </li>
+        <li class="grid gap-1 border-b border-ink/10 py-4 sm:grid-cols-[15rem_1fr] sm:gap-6">
+          <code class="font-mono text-sm font-medium text-riso-deep">shadcn-inertia</code>
+          <span class="text-sm leading-relaxed text-ink-muted">shadcn/ui wired for Inertia, not Next.js</span>
+        </li>
+        <li class="grid gap-1 py-4 sm:grid-cols-[15rem_1fr] sm:gap-6">
+          <code class="font-mono text-sm font-medium text-riso-deep">impeccable</code>
+          <span class="text-sm leading-relaxed text-ink-muted">frontend design and UI quality standards</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <%# Stack: real versions, quoted from the lockfiles %>
+  <section class="mx-auto w-full max-w-6xl px-5 pb-24 sm:px-8 lg:pb-32">
+    <div class="flex flex-col gap-10 border-t border-ink/10 pt-16 lg:pt-20">
+      <h2 class="text-section">Boring where it counts.</h2>
+      <p class="max-w-[62ch] leading-relaxed text-ink-muted text-pretty">
+        Agent-written code is only as good as the conventions it lands in. Underneath
+        the briefing sits a stack with two decades of them: one monolith, no separate
+        API to keep in sync.
+      </p>
+      <dl class="grid gap-x-16 sm:grid-cols-2">
+        <div class="flex flex-col gap-1 border-b border-ink/10 py-4">
+          <dt class="font-medium">Rails 8 · Ruby 4</dt>
+          <dd class="text-sm leading-relaxed text-ink-muted">the monolith; server owns routing, data, auth</dd>
+        </div>
+        <div class="flex flex-col gap-1 border-b border-ink/10 py-4">
+          <dt class="font-medium">Inertia Rails 3</dt>
+          <dd class="text-sm leading-relaxed text-ink-muted">React pages without building an API</dd>
+        </div>
+        <div class="flex flex-col gap-1 border-b border-ink/10 py-4">
+          <dt class="font-medium">React 19 + TypeScript</dt>
+          <dd class="text-sm leading-relaxed text-ink-muted">rendering only, no client-side routing or stores</dd>
+        </div>
+        <div class="flex flex-col gap-1 border-b border-ink/10 py-4">
+          <dt class="font-medium">Tailwind CSS 4 + shadcn/ui</dt>
+          <dd class="text-sm leading-relaxed text-ink-muted">styling and a UI kit the skills know how to use</dd>
+        </div>
+        <div class="flex flex-col gap-1 border-b border-ink/10 py-4">
+          <dt class="font-medium">PostgreSQL + Solid Queue / Cache / Cable</dt>
+          <dd class="text-sm leading-relaxed text-ink-muted">jobs, caching, and websockets with no Redis</dd>
+        </div>
+        <div class="flex flex-col gap-1 border-b border-ink/10 py-4">
+          <dt class="font-medium">Devise 5 + Google OAuth + Pundit</dt>
+          <dd class="text-sm leading-relaxed text-ink-muted">sign-in, OAuth, and authorization policies wired</dd>
+        </div>
+        <div class="flex flex-col gap-1 border-b border-ink/10 py-4">
+          <dt class="font-medium">Kamal 2 + Thruster</dt>
+          <dd class="text-sm leading-relaxed text-ink-muted">containerized deploys to any box you own</dd>
+        </div>
+        <div class="flex flex-col gap-1 border-b border-ink/10 py-4">
+          <dt class="font-medium">RubyLLM + GitHub Actions CI</dt>
+          <dd class="text-sm leading-relaxed text-ink-muted">LLM calls from Ruby; RuboCop, Brakeman, tests on push</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <%# Close: how to start, the blog, and the footer, on the black sheet %>
+  <section class="bg-ink text-paper">
+    <div class="mx-auto flex w-full max-w-6xl flex-col gap-16 px-5 py-20 sm:px-8 lg:py-28">
+      <div class="grid gap-12 lg:grid-cols-[5fr_7fr] lg:gap-20">
+        <div class="flex flex-col gap-4">
+          <h2 class="text-section">Point an agent at&nbsp;it.</h2>
+          <p class="max-w-[44ch] leading-relaxed text-paper/70 text-pretty">
+            The briefing does its job from the first prompt. Nothing to configure.
+            The repo is the configuration.
+          </p>
+        </div>
+        <ol class="flex min-w-0 flex-col gap-9">
+          <li class="flex flex-col gap-3">
+            <span class="font-mono text-sm text-riso">01 · clone</span>
+            <pre class="overflow-x-auto border border-paper/20 px-4 py-3.5 font-mono text-[0.8125rem] leading-relaxed">git clone git@github.com:thecodingend/rails-starter.git
+cd rails-starter</pre>
+          </li>
+          <li class="flex flex-col gap-3">
+            <span class="font-mono text-sm text-riso">02 · boot</span>
+            <pre class="overflow-x-auto border border-paper/20 px-4 py-3.5 font-mono text-[0.8125rem] leading-relaxed">bundle install && pnpm install
+docker compose up -d && bin/rails db:prepare
+bin/dev</pre>
+          </li>
+          <li class="flex flex-col gap-3">
+            <span class="font-mono text-sm text-riso">03 · hand it over</span>
+            <pre class="overflow-x-auto border border-paper/20 px-4 py-3.5 font-mono text-[0.8125rem] leading-relaxed">claude</pre>
+            <p class="text-sm leading-relaxed text-paper/70">Your agent reads CLAUDE.md before you finish the first prompt.</p>
+          </li>
+        </ol>
+      </div>
+
+      <% posts = BlogPost.latest.first(3) %>
+      <% if posts.any? %>
+        <div class="flex flex-col gap-6 border-t border-paper/15 pt-10">
+          <h2 class="font-mono text-sm text-paper/60">from the blog</h2>
+          <ul class="flex flex-col gap-5">
+            <% posts.each do |post| %>
+              <li class="flex flex-col gap-1">
+                <a href="<%= post.request_path %>" class="max-w-[40ch] text-xl font-semibold text-balance underline decoration-transparent decoration-2 underline-offset-4 transition-colors hover:decoration-riso"><%= post.title %></a>
+                <time datetime="<%= post.date %>" class="font-mono text-xs text-paper/60"><%= post.date.strftime("%B %-d, %Y") %></time>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <footer class="flex flex-wrap items-center justify-between gap-x-8 gap-y-4 border-t border-paper/15 pt-8 font-mono text-xs text-paper/60">
+        <p>rails-starter<span class="text-riso" aria-hidden="true">_</span></p>
+        <a href="https://github.com/thecodingend/rails-starter" aria-label="GitHub repository, 5 stars" class="text-paper/80 underline decoration-[1.5px] underline-offset-4 hover:text-riso">github <span class="text-riso" aria-hidden="true">★</span> 5</a>
+      </footer>
+    </div>
+  </section>
+</main>
+
+<script>
+  document.querySelectorAll("[data-copy]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      await navigator.clipboard.writeText(button.dataset.copy)
+      button.textContent = "copied"
+      setTimeout(() => (button.textContent = "copy"), 1200)
+    })
+  })
+</script>

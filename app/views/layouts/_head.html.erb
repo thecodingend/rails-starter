@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<title><%= current_page.data.fetch("title", "Rails Starter") %></title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<% if current_page.data["description"] %>
+  <meta name="description" content="<%= current_page.data["description"] %>">
+  <meta property="og:description" content="<%= current_page.data["description"] %>">
+<% end %>
+<meta property="og:title" content="<%= current_page.data.fetch("title", "Rails Starter") %>">
+<meta property="og:site_name" content="rails-starter">
+<% if current_page.data["image"] %>
+  <meta property="og:image" content="<%= request.base_url + current_page.data["image"] %>">
+<% end %>
+
+<link rel="icon" href="/icon.png" type="image/png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon.png">
+
+<%= vite_client_tag %>
+<%= vite_stylesheet_tag "site" %>

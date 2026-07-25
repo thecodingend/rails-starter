@@ -17,6 +17,8 @@ shipping features.
   authorization out of the box
 - **Solid Queue / Solid Cache / Solid Cable** for database-backed jobs,
   caching, and websockets, with Solid Queue running in development too
+- **Sitepress marketing site + markdown blog**: a designed landing page at `/`
+  and a file-based blog at `/blog`, server-rendered by the same app
 - **pnpm** for JavaScript dependencies
 - **GitHub Actions CI** running RuboCop, Brakeman, bundler-audit, tests, and
   system tests with built Vite assets
@@ -41,6 +43,33 @@ docker compose up -d
 bin/rails db:prepare
 bin/dev
 ```
+
+## Marketing Site & Blog
+
+The landing page (`/`) and blog (`/blog`) are
+[Sitepress](https://sitepress.cc) pages in `app/content/pages`,
+server-rendered with the rest of the app — same repo, same deploy. They have
+their own layouts (`app/views/layouts/site.html.erb` and `article.html.erb`)
+and stylesheet (`app/frontend/entrypoints/site.css`), separate from the
+Inertia app, which stays available at `/inertia-example`.
+
+To publish a post, add a markdown file under `app/content/pages/blog/`:
+
+```md
+---
+layout: article
+title: Post title
+date: 2026-07-22
+description: One-sentence summary shown on the index and in meta tags.
+image: /og/post-title.png
+---
+
+Body in markdown. Fenced code blocks work.
+```
+
+The blog index and the landing page pick it up automatically. `image` is
+optional: drop a 1200×630 image in `public/og/` and it becomes the page's
+Open Graph image.
 
 ## Skills
 
