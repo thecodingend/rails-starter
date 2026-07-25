@@ -61,7 +61,7 @@ end
 
 gem "inertia_rails", "~> 3.21"
 
-gem "vite_rails", "~> 3.10"
+gem "vite_rails", "~> 3.11"
 
 gem "devise", "~> 5.0.4"
 gem "omniauth-google-oauth2", "~> 1.2.2"
