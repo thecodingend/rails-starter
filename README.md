@@ -1,4 +1,7 @@
-# Rails Starter
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/logo-dark.svg">
+  <img src=".github/logo.svg" alt="rails-starter" width="380">
+</picture>
 
 A Rails starter built for AI-assisted development, battle-tested with Claude
 Code and Codex. Agent instructions (`AGENTS.md` / `CLAUDE.md`), project
