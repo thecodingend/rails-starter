@@ -1,5 +1,3 @@
-class SiteController < ApplicationController
-  include Sitepress::SitePages
-
+class SiteController < Sitepress::SiteController
   layout "site"
 end
