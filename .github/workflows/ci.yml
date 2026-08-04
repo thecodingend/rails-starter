@@ -82,7 +82,7 @@ jobs:
           bundler-cache: true
 
       - name: Set up pnpm
-        uses: pnpm/action-setup@v6
+        uses: pnpm/action-setup@v6.0.9
         with:
           version: 11
 
@@ -138,7 +138,7 @@ jobs:
           bundler-cache: true
 
       - name: Set up pnpm
-        uses: pnpm/action-setup@v6
+        uses: pnpm/action-setup@v6.0.9
         with:
           version: 11
 
